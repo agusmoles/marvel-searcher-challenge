@@ -6,5 +6,5 @@ export default {
         desktopSm: `(max-width: 1280px)`,
         desktopMd: `(max-width: 1440px)`,
         desktopLg: `(max-width: 1920px)`,
-    }
-}
+    },
+};
