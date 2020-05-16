@@ -41,7 +41,7 @@ const Navbar = () => {
     return (
         <>
             <NavbarContainer>
-                <img src={marvelLogo} />
+                <img src={marvelLogo} alt="Marvel Searcher logo" />
                 <SearchBar />
                 <svg
                     className="fav-icon"
