@@ -14,16 +14,28 @@ const SearchBarContainer = styled.div`
     }
 
     input {
+        flex-grow: 1;
         border: 1px solid #eeeeee;
         border-radius: 6px;
         height: 27px;
-        flex-grow: 1;
         padding: 2px 10px;
         outline: 0;
         transition: all 0.5s ease;
 
         &:focus {
             border-width: 2px;
+        }
+    }
+
+    @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+        padding: 0 10px;
+
+        input {
+            max-width: calc(100vw - 160px);
+        }
+
+        svg {
+            margin-right: 5px;
         }
     }
 `;

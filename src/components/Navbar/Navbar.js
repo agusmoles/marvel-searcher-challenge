@@ -24,6 +24,17 @@ const NavbarContainer = styled.nav`
         padding-left: 20px;
         border-left: 1px solid #eeeeee;
     }
+
+    @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+        img {
+            height: 20px;
+            padding-right: 10px;
+        }
+
+        .fav-icon {
+            padding-left: 10px;
+        }
+    }
 `;
 
 const Navbar = () => {
