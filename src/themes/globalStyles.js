@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Roboto";
+        font-family: "Roboto", -apple-system, BlinkMacSystemFont;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: ${({ theme }) => theme.colors.textColour}

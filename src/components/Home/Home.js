@@ -1,15 +1,21 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-// import ComicsSection from "../ComicsSection/ComicsSection";
+import CharactersSection from "../CharactersSection/CharactersSection";
 import { useHttp } from "../../hooks/http";
 
+const randomOffset = Math.floor(Math.random() * 1485);
+
 const Home = () => {
-    const [, comicsData] = useHttp("/comics", []);
+    const [, charactersData] = useHttp(
+        `/characters?limit=8&offset=${randomOffset}`
+    );
 
     return (
         <>
             <Navbar />
-            {/* <ComicsSection /> */}
+            {charactersData && (
+                <CharactersSection characters={charactersData} />
+            )}
         </>
     );
 };

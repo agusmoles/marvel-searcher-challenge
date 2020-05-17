@@ -11,13 +11,17 @@ const timestamp = new Date().getTime();
 const requestHash = md5(
     timestamp + REACT_APP_API_PRIVATE_KEY + REACT_APP_API_PUBLIC_KEY
 );
+const requestedParams = `ts=${timestamp}&apikey=${REACT_APP_API_PUBLIC_KEY}&hash=${requestHash}`;
 
 export const useHttp = (url) => {
     const [isLoading, setIsLoading] = useState(true);
     const [fetchedData, setFetchedData] = useState(null);
+    url = url.includes("?")
+        ? url.split("?").join(`?${requestedParams}&`)
+        : url + `?${requestedParams}`;
 
     useEffect(() => {
-        const endpoint = `${REACT_APP_API_ENDPOINT}${url}?ts=${timestamp}&apikey=${REACT_APP_API_PUBLIC_KEY}&hash=${requestHash}`;
+        const endpoint = `${REACT_APP_API_ENDPOINT}${url}`;
         process.env.NODE_ENV === "development" &&
             console.log("Fetching data...", endpoint);
         fetch(endpoint, {
