@@ -7,6 +7,9 @@ import lightTheme from "./themes/lightTheme";
 import GlobalStyles from "./themes/globalStyles";
 import * as serviceWorker from "./serviceWorker";
 
+!window.localStorage.getItem("favorites") &&
+    window.localStorage.setItem("favorites", "[]");
+
 ReactDOM.render(
     <React.StrictMode>
         <ThemeProvider theme={globalTheme}>

@@ -10,6 +10,11 @@ const CardsContainer = styled.div`
     max-width: 1440px;
     margin: 0 auto;
     padding: 40px 0;
+    @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+        flex-wrap: nowrap;
+        overflow: scroll;
+        width: 100%;
+    }
 
     .character-card {
         box-shadow: 0 1px 5px 0 #aaa;
@@ -21,6 +26,12 @@ const CardsContainer = styled.div`
         flex-flow: column;
         padding: 10px;
         cursor: pointer;
+        @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+            flex-basis: 90%;
+            flex-shrink: 0;
+            margin-left: 3%;
+            min-height: 400px;
+        }
 
         svg {
             width: 20px;
@@ -47,13 +58,7 @@ const CharactersSection = ({ characters }) => {
                 const image = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
 
                 return (
-                    <CharacterCard
-                        key={id}
-                        name={name}
-                        id={id}
-                        image={image}
-                        isFav={false}
-                    />
+                    <CharacterCard key={id} name={name} id={id} image={image} />
                 );
             })}
         </CardsContainer>
