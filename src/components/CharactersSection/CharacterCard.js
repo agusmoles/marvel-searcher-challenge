@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const CharacterCard = ({ id, name, image }) => {
+const CharacterCard = ({ id, name, image, handleCardClick }) => {
     const [isFav, setIsFav] = useState(
         JSON.parse(window.localStorage.getItem("favorites")).includes(id)
     );
-    const handleFavoriteClick = () => {
+    const handleFavoriteClick = (e) => {
+        e.stopPropagation();
         setIsFav(!isFav);
 
         const newItems = isFav
             ? JSON.parse(window.localStorage.getItem("favorites")).filter(
-                  (charId) => charId != id
+                  (charId) => +charId !== id
               )
             : [...JSON.parse(window.localStorage.getItem("favorites")), id];
 
@@ -20,6 +21,9 @@ const CharacterCard = ({ id, name, image }) => {
     return (
         <div
             className="character-card"
+            onClick={handleCardClick}
+            data-id={id}
+            data-name={name}
             style={{
                 backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
@@ -55,4 +59,5 @@ CharacterCard.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    handleCardClick: PropTypes.func.isRequired,
 };

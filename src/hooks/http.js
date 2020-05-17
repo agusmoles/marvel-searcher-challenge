@@ -16,7 +16,9 @@ const requestedParams = `ts=${timestamp}&apikey=${REACT_APP_API_PUBLIC_KEY}&hash
 export const useHttp = (url) => {
     const [isLoading, setIsLoading] = useState(true);
     const [fetchedData, setFetchedData] = useState(null);
-    url = url.split("?").join(`?${requestedParams}&`);
+    url = url.includes("?")
+        ? url.split("?").join(`?${requestedParams}&`)
+        : url + `?${requestedParams}`;
 
     useEffect(() => {
         const endpoint = `${REACT_APP_API_ENDPOINT}${url}`;
