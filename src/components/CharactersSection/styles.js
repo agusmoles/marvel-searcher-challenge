@@ -61,7 +61,7 @@ export const ModalContainer = styled.div`
 
     .modal {
         background: ${({ theme }) => theme.colors.background};
-        width: 100%;
+        width: 95%;
         max-width: 500px;
         height: 100%;
         max-height: 600px;
@@ -89,6 +89,9 @@ export const ModalContainer = styled.div`
             .comic {
                 display: flex;
                 padding: 20px 0;
+                @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+                    flex-direction: column;
+                }
 
                 img {
                     flex-shrink: 0;
@@ -97,6 +100,10 @@ export const ModalContainer = styled.div`
                     object-fit: cover;
                     margin-right: 15px;
                     border-radius: 6px;
+                    @media ${({ theme }) => theme.mediaQueries.mobileLg} {
+                        width: 100%;
+                        margin-bottom: 5px;
+                    }
                 }
 
                 p {
