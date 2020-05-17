@@ -23,6 +23,7 @@ export const CardsContainer = styled.div`
         flex-flow: column;
         padding: 10px;
         cursor: pointer;
+        transition: all 0.5s ease;
         @media ${({ theme }) => theme.mediaQueries.mobileLg} {
             flex-basis: 90%;
             flex-shrink: 0;
