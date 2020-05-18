@@ -7,5 +7,6 @@ export default {
         textColour: "#202020",
         red: "#ED1D24",
         background: "#F7F8FA",
+        shadowColor: "#eee",
     },
 };

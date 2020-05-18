@@ -1,6 +1,7 @@
 import React from "react";
 import Proptypes from "prop-types";
 import { useHttp } from "../../hooks/http";
+import { Link } from "react-router-dom";
 
 const Modal = ({ character, handleModalClose, onlyComic }) => {
     const { id, name } = character;
@@ -29,7 +30,9 @@ const Modal = ({ character, handleModalClose, onlyComic }) => {
 
                         return (
                             <article className="comic" key={id}>
-                                <img src={image} alt={`${title} poster`} />
+                                <Link target="_blank" to={`/comics/${id}`}>
+                                    <img src={image} alt={`${title} poster`} />
+                                </Link>
 
                                 <div className="info">
                                     <h4>{title}</h4>

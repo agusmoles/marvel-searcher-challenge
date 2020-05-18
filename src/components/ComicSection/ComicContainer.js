@@ -6,6 +6,7 @@ export const ComicContainer = styled.div`
 
     img {
         flex-basis: 50%;
+        object-fit: contain;
     }
 
     .info {

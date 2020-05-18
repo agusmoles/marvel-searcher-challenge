@@ -11,7 +11,7 @@ const NavbarContainer = styled.nav`
     display: flex;
     align-items: center;
     padding: 0 5%;
-    box-shadow: 0 2px 5px 0 #eeeeee;
+    box-shadow: 0 2px 5px 0 ${({ theme }) => theme.colors.shadowColor};
 
     img {
         height: 24px;

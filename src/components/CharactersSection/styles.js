@@ -14,7 +14,7 @@ export const CardsContainer = styled.div`
     }
 
     .character-card {
-        box-shadow: 0 1px 5px 0 #aaa;
+        box-shadow: 0 1px 5px 0 ${({ theme }) => theme.colors.shadowColor};
         flex-basis: 23%;
         border-radius: 3px;
         margin: 0 1% 20px;
