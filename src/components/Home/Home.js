@@ -8,7 +8,8 @@ import { parseQueryParams } from "../../utilities/queryParams";
 const randomOffset = Math.floor(Math.random() * 1485);
 
 const Home = ({ location }) => {
-    let { queryParamsString } = parseQueryParams(location.search);
+    let { queryParams, queryParamsString } = parseQueryParams(location.search);
+    const comicTitle = queryParams.comic;
 
     if (location.search === "") queryParamsString += `&offset=${randomOffset}`;
 
@@ -20,7 +21,10 @@ const Home = ({ location }) => {
         <>
             <Navbar />
             {charactersData && (
-                <CharactersSection characters={charactersData} />
+                <CharactersSection
+                    onlyComic={comicTitle}
+                    characters={charactersData}
+                />
             )}
         </>
     );

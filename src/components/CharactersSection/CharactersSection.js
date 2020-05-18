@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import { CardsContainer, ModalContainer } from "./styles.js";
 import PropTypes from "prop-types";
 
-const CharactersSection = ({ characters }) => {
+const CharactersSection = ({ characters, onlyComic }) => {
     const [isModalActive, setIsModalActive] = useState(false);
     const [selectedCharacter, setSelectedCharacter] = useState(null);
 
@@ -42,6 +42,7 @@ const CharactersSection = ({ characters }) => {
                     <Modal
                         handleModalClose={handleModalClose}
                         character={selectedCharacter}
+                        onlyComic={onlyComic}
                     />
                 </ModalContainer>
             )}
@@ -57,4 +58,5 @@ CharactersSection.propTypes = {
             results: PropTypes.array.isRequired,
         }).isRequired,
     }).isRequired,
+    onlyComic: PropTypes.string,
 };
