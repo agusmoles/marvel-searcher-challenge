@@ -2,9 +2,12 @@ import React from "react";
 import Proptypes from "prop-types";
 import { useHttp } from "../../hooks/http";
 
-const Modal = ({ character, handleModalClose }) => {
+const Modal = ({ character, handleModalClose, onlyComic }) => {
     const { id, name } = character;
-    const [, comicsData] = useHttp(`/characters/${id}/comics`);
+    const queryParam = onlyComic && `?title=${onlyComic}`;
+    const [, comicsData] = useHttp(
+        `/characters/${id}/comics${queryParam || ""}`
+    );
 
     return (
         <div className="modal">
@@ -45,4 +48,5 @@ export default Modal;
 Modal.propTypes = {
     character: Proptypes.object.isRequired,
     handleModalClose: Proptypes.func.isRequired,
+    onlyComic: Proptypes.string,
 };
