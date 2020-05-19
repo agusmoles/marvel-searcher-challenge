@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CharacterCard = ({ id, name, image, handleCardClick }) => {
     const [isFav, setIsFav] = useState(
-        JSON.parse(window.localStorage.getItem("favorites")).includes(id)
+        JSON.parse(window.localStorage.getItem("favorites") || "[]").includes(id)
     );
     const handleFavoriteClick = (e) => {
         e.stopPropagation();

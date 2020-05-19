@@ -9,7 +9,7 @@ const Favorites = () => {
     });
 
     const [favoriteCharactersIds] = useState(
-        JSON.parse(window.localStorage.getItem("favorites"))
+        JSON.parse(window.localStorage.getItem("favorites") || "[]")
     );
 
     useEffect(() => {

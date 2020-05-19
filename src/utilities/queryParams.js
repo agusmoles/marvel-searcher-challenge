@@ -15,12 +15,13 @@ export const getQueryParams = (searchString) => {
 
 export const parseQueryParams = (searchString) => {
     const queryParams = getQueryParams(searchString);
-    const endpointParams = {};
 
-    if (queryParams.character)
-        endpointParams["nameStartsWith"] = queryParams.character;
+    if (queryParams.character) {
+        queryParams["nameStartsWith"] = queryParams.character;
+        delete queryParams.character;
+    }
 
-    const queryParamsString = Object.entries(endpointParams)
+    const queryParamsString = Object.entries(queryParams)
         .map(([key, value]) => `&${key}=${value}`)
         .join("");
 
