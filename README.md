@@ -1,4 +1,4 @@
-## Marvel Searcher Challenge (DEMO)[https://marvel-searcher-challenge.now.sh/]
+## Marvel Searcher Challenge [DEMO](https://marvel-searcher-challenge.now.sh/)
 
 -   El buscador tiene que tener la posibilidad de buscar los nombres de los Personajes de Marvel en el input pero también por URL.
 -   Cuando se entra la primera vez en la app web sin ningún personaje en la URL tiene que mostrar un personaje aleatorio y así por cada vez que vuelva a recargar la página.
