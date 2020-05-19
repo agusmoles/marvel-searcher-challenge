@@ -115,3 +115,29 @@ export const ModalContainer = styled.div`
         }
     }
 `;
+
+CardsContainer.defaultProps = {
+    theme: {
+        colors: {
+            background: "#F7F8FA",
+            grey: "#eee",
+            shadowColor: "#eee",
+        },
+        mediaQueries: {
+            mobileLg: "(max-width: 500px)",
+        },
+    },
+};
+
+ModalContainer.defaultProps = {
+    theme: {
+        colors: {
+            background: "#F7F8FA",
+            grey: "#eee",
+            shadowColor: "#eee",
+        },
+        mediaQueries: {
+            mobileLg: "(max-width: 500px)",
+        },
+    },
+};
